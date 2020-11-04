@@ -19,7 +19,7 @@ setup(
     # Project Descriptions.
     # - The one-line description corresponds to the "Summary" metadata field.
     # - The long description represents the body of text which users will see when they visit PyPI.
-    description='A sample Python project',          # Optional
+    description='🇹🇼 A package to solve the problem of "Tofu" in your matplotlib plots whenever you\'re trying to use Traditional Chinese characters in labels or texts.',          # Optional
     long_description=long_description,              # Optional
     long_description_content_type='text/markdown',  # Optional
 
