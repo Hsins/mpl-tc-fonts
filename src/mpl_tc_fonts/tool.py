@@ -5,14 +5,17 @@ from fontTools.ttLib import TTFont
 from fontTools.unicode import Unicode
 
 package_path = Path(__file__).parents[0].resolve()
-fonts_info = {
-    # cwTeX Fonts
-    'cwTeX Q Ming': {'folder': 'cwtex', 'filename': 'cwTeXQMing.ttf'},
-    'cwTeX Q Kai': {'folder': 'cwtex', 'filename': 'cwTeXQKai.ttf'},
-    'cwTeX Q Yuan': {'folder': 'cwtex', 'filename': 'cwTeXQYuan.ttf'},
-    'cwTeX Q Fangsong': {'folder': 'cwtex', 'filename': 'cwTeXQFangsong.ttf'},
-    'cwTeX Q Hei': {'folder': 'cwtex', 'filename': 'cwTeXQHei.ttf', }
-}
+cjk_font_path = Path(f'{package_path}/fonts/').resolve()
+mpl_font_path = Path(f'{matplotlib.get_data_path()}/fonts/ttf').resolve()
+
+# fonts_info = {
+#     # cwTeX Fonts
+#     'cwTeX Q Ming': {'folder': 'cwtex', 'filename': 'cwTeXQMing.ttf'},
+#     'cwTeX Q Kai': {'folder': 'cwtex', 'filename': 'cwTeXQKai.ttf'},
+#     'cwTeX Q Yuan': {'folder': 'cwtex', 'filename': 'cwTeXQYuan.ttf'},
+#     'cwTeX Q Fangsong': {'folder': 'cwtex', 'filename': 'cwTeXQFangsong.ttf'},
+#     'cwTeX Q Hei': {'folder': 'cwtex', 'filename': 'cwTeXQHei.ttf', }
+# }
 
 
 class FontTool():
@@ -21,26 +24,23 @@ class FontTool():
         pass
 
     @staticmethod
-    def load(font='cwTeX Q Yuan'):
-        folder, filename = fonts_info[font]['folder'], fonts_info[font]['filename']
-        font_path = Path(f'{package_path}/fonts/{folder}/{filename}').resolve()
-
-        matplotlib.font_manager.fontManager.addfont(f'{font_path}')
-
-        # 設定預設字體（須注意座標軸負號顯示）
-        # : 中文字體中，襯線體（serif）通常設置為明體或楷體
-        # : 中文字體中，非襯線體（sans-serif）通常設置為黑體或圓體
-        # matplotlib.rcParams['font.family'] = [
-        #     font] + matplotlib.rcParams['font.family']
-        matplotlib.rcParams['font.serif'] = [
-            font] + matplotlib.rcParams['font.serif']
-        matplotlib.rcParams['font.sans-serif'] = [font] + \
-            matplotlib.rcParams['font.sans-serif']
+    def set_font(font='Noto Serif CJK TC'):
+        matplotlib.rcParams['font.sans-serif'] = [font] + matplotlib.rcParams['font.sans-serif']
         matplotlib.rcParams['axes.unicode_minus'] = False
 
     @staticmethod
-    def install_font():
-        pass
+    def install_font(folder='noto', method='link'):
+        if method == 'link':
+            for file in Path(f'{cjk_font_path}/{folder}'):
+                matplotlib.font_manager.fontManager.addfont(file)
+        elif method == 'copy':
+            mpl_fonts = [file.name for file in mpl_font_path.glob('**/*')]
+            cjk_fonts = [file.name for file in Path(f'{cjk_font_path}/{folder}')]
+
+            for font in cjk_fonts:
+                if font not in mpl_fonts:
+                    shutil.copy(Path(f'{cjk_font_path}/{folder}/{font}'),
+                                Path(f'{mpl_font_path}/{font}'))
 
     @staticmethod
     def show_font_setting():
