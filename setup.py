@@ -87,7 +87,7 @@ setup(
     # https://packaging.python.org/guides/distributing-packages-using-setuptools/#python-requires
     python_requires='>=3.5, <4',
 
-    install_requires=['matplotlib', 'shutil', 'fontTools'],
+    install_requires=['matplotlib', 'fontTools'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
