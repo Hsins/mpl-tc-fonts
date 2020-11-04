@@ -11,7 +11,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     # Project Name. It will determine how users can install this project.
-    name='mpl-fonts',       # Required
+    name='mpl-tc-fonts',       # Required
 
     # Project Version. The version should comply with PEP 440.
     version='1.0.0',        # Required
@@ -24,7 +24,7 @@ setup(
     long_description_content_type='text/markdown',  # Optional
 
     # Project Homepage. This field corresponds to the "Home-Page" metadata field.
-    url='https://github.com/Hsins/mpl-fonts',       # Optional
+    url='https://github.com/Hsins/mpl-tc-fonts',       # Optional
 
     # Project Author.
     author='Hsins',
@@ -87,7 +87,7 @@ setup(
     # https://packaging.python.org/guides/distributing-packages-using-setuptools/#python-requires
     python_requires='>=3.5, <4',
 
-    install_requires=['matplotlib', 'fontTools'],
+    install_requires=['matplotlib', 'shutil', 'fontTools'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
@@ -105,7 +105,7 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     package_data={  # Optional
-        'mpl_fonts': ['./fonts/*/*.ttf'],
+        'mpl_tc_fonts': ['./fonts/*/*.ttf'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
@@ -138,9 +138,9 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/Hsins/mpl-fonts/issues',
+        'Bug Reports': 'https://github.com/Hsins/mpl-tc-fonts/issues',
         'Funding': 'https://donate.pypi.org',
         'Say Thanks!': 'http://saythanks.io/to/example',
-        'Source': 'https://github.com/Hsins/mpl-fonts',
+        'Source': 'https://github.com/Hsins/mpl-tc-fonts',
     },
 )
