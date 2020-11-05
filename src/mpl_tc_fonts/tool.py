@@ -10,7 +10,7 @@ MPL_FONT_PATH = Path(f'{matplotlib.get_data_path()}/fonts/ttf').resolve()
 
 # helper functions
 def __has_glyph(font_path: str, glyph) -> bool:
-    font = TTFont(font_path)
+    font = TTFont(font_path, fontNumber=0)
     for table in font['cmap'].tables:
         if ord(glyph) in table.cmap.keys():
             return True
@@ -24,7 +24,7 @@ def set_font(font='Noto Serif CJK TC') -> None:
 
 def load_font(folder='noto', method='link') -> None:
     if method == 'link':
-        for file in Path(f'{CJK_FONT_PATH}/{folder}').glob('**/*'):
+        for file in Path(f'{CJK_FONT_PATH}/{folder}').glob('**/*.*'):
             matplotlib.font_manager.fontManager.addfont(f'{file.resolve()}')
 
     elif method == 'copy':
@@ -42,7 +42,7 @@ def load_font(folder='noto', method='link') -> None:
 def scan_font(char='灣') -> list:
     result = []
     for font in matplotlib.font_manager.fontManager.ttflist:
-        if font.name not in result and __has_glyph(font, char):
+        if font.name not in result and __has_glyph(f'{Path(font.fname).resolve()}', char):
             result.append(font.name)
 
     return result

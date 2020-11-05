@@ -1,5 +1,6 @@
 <div align="right">
 
+  [![](https://flat.badgen.net/pypi/v/mpl-tc-fonts)](https://pypi.org/project/mpl-tc-fonts/)
   [![](https://flat.badgen.net/github/license/Hsins/mpl-tc-fonts)](./LICENSE)
 
 </div>
@@ -11,6 +12,8 @@
 # mpl-tc-fonts
 
 🇹🇼 _A package to solve the problem of ["Tofu"](https://en.wikipedia.org/wiki/Specials_(Unicode_block)) in your `matplotlib` plots whenever you're trying to use Traditional Chinese characters in labels or texts._
+
+[![Open In Colab](https://flat.badgen.net/badge/Demo/Open%20in%20Colab/DB8E34?icon=https://simpleicons.now.sh/jupyter/fff)](https://colab.research.google.com/github/hsins/mpl-tc-fonts/blob/main/examples/examples.ipynb)
 
 </div>
 

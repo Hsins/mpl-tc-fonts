@@ -14,7 +14,7 @@ setup(
     name='mpl-tc-fonts',       # Required
 
     # Project Version. The version should comply with PEP 440.
-    version='1.0.0',        # Required
+    version='1.0.1',        # Required
 
     # Project Descriptions.
     # - The one-line description corresponds to the "Summary" metadata field.
@@ -105,7 +105,7 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     package_data={  # Optional
-        'mpl_tc_fonts': ['./fonts/*/*.*'],
+        'mpl_tc_fonts': ['./fonts/*/*.ttf', './fonts/*/*.otf'],
     },
 
     # Although 'package_data' is the preferred approach, in some case you may
