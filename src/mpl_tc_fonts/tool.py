@@ -42,9 +42,8 @@ def load_font(folder='noto', method='link') -> None:
 def scan_font(char='灣') -> list:
     result = []
     for font in matplotlib.font_manager.fontManager.ttflist:
-        font_name = font.name
-        if font_name not in result and __has_glyph(font_name, char):
-            result.append(font_name)
+        if font.name not in result and __has_glyph(font, char):
+            result.append(font.name)
 
     return result
 
