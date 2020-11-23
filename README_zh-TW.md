@@ -11,10 +11,10 @@
 
 # mpl-tc-fonts
 
-🇹🇼 _A package to solve the problem of ["Tofu"](https://en.wikipedia.org/wiki/Specials_(Unicode_block)) in your `matplotlib` plots whenever you're trying to use Traditional Chinese characters in labels or texts._
+🇹🇼 _一款用來處理 `matplotlib` 繪圖時無法正常顯示繁體中文標籤或內容，導致產生如同 [豆腐（tofu）](https://en.wikipedia.org/wiki/Specials_(Unicode_block)) 形狀空白字元 `□` 的套件_
 
 [![Open in Colab](https://img.shields.io/badge/DEMO-Open%20in%20Colab-DB8E34.svg?logo=jupyter&style=flat-square)](https://colab.research.google.com/github/hsins/mpl-tc-fonts/blob/main/examples/examples.ipynb)
-[![README in Traditional Chinese](https://img.shields.io/badge/README-繁體中文-8CA1AF.svg?logo=read-the-docs&style=flat-square)](./README_zh-TW.md)
+[![README in English](https://img.shields.io/badge/README-English-8CA1AF.svg?logo=read-the-docs&style=flat-square)](./README.md)
 
 </div>
 
@@ -23,16 +23,16 @@
 
 <div align="center">
 
-[🇨🇳 Simplified Chinese](https://github.com/Hsins/mpl-sc-fonts) ・ [🇯🇵 Japanese](https://github.com/Hsins/mpl-jp-fonts) ・ [🇰🇷 Korean](https://github.com/Hsins/mpl-kr-fonts)
+[🇨🇳 簡體中文](https://github.com/Hsins/mpl-sc-fonts) ・ [🇯🇵 日語](https://github.com/Hsins/mpl-jp-fonts) ・ [🇰🇷 韓文](https://github.com/Hsins/mpl-kr-fonts)
 
 </div>
 
 <p>
 </details>
 
-## Installation
+## 安裝
 
-Install `mpl-tc-fonts` with `pip`:
+透過 `pip` 套件管理工具安裝 `mpl-tc-fonts` 套件:
 
 ```bash
 # Install from GitHub Repository for latest commit
@@ -42,9 +42,9 @@ $ pip install git+https://github.com/Hsins/mpl-tc-fonts.git
 The package installer `pip` will install this package from the [
 mpl-tc-fonts](https://github.com/Hsins/mpl-tc-fonts) repository to your local python environment. Please see the [FAQ](#faq) section for more information and troubleshooting.
 
-## Usage
+## 使用說明
 
-### Quick Start
+### 快速入門
 
 The easiest way to use this package is just `import` the package after installation. It links the fonts inside package folder to the `matplotlib` font manager and the Traditional Chinese characters will be properly displayed in your plots.
 
@@ -73,7 +73,7 @@ plt.show()
 
 > **[NOTE]** The default font would set to be **思源宋體（Noto Serif CJK TC）**.
 
-### More Features
+### 更多特性
 
 ```python
 import mpl_tc_fonts
@@ -107,9 +107,9 @@ There are some functions to help users qucik setup the fonts:
 - `mpl_tc_fonts.scan_font(char)` return the `list` of avaiable fonts in the FontList of `matlibplot`. The given `char` is used to check whether glyph could be found in that font or not.
 - `mpl_tc_fonts.show_font_setting()` print out current font in use.
 
-## FAQ
+## 常見問答
 
-<details><summary><b>[ Q ] What's the difference between <code>copy</code> and <code>link</code> options in the <code>load_font()</code> method?</b></summary>
+<details><summary><b>[ 問 ] 在 <code>load_font()</code> 方法中的 <code>copy</code> 和 <code>link</code> 選項有什麼區別？</b></summary>
 <p>
 
 > TBD
@@ -117,6 +117,6 @@ There are some functions to help users qucik setup the fonts:
 <p>
 </details>
 
-## License
+## 授權許可
 
 Licensed under the GPL-3.0 License, Copyright © 2020-present Hsins.
